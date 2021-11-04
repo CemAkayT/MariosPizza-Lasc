@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PizzaBase {
@@ -32,5 +33,13 @@ public class PizzaBase {
 
     public List<Pizza> getListOfAllPizzas(){
         return db.getListOfAllPizzas();
+    }
+
+    public void createNewOrder(int orderNumber){
+        db.createNewOrder(orderNumber);
+    }
+
+    public ArrayList<Order> getListOfOrders() {
+        return db.getListOfOrders();
     }
 }

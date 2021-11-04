@@ -65,5 +65,13 @@ public class Database {
         public List<Pizza> getListOfAllPizzas() {
             return listen;
         }
+
+        public void createNewOrder(int orderNumber){
+            orderList.createNewOrder(orderNumber);
+        }
+
+    public ArrayList<Order> getListOfOrders() {
+        return orderList.getListOfOrders();
     }
+}
 

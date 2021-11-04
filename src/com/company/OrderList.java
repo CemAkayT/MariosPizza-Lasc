@@ -7,7 +7,11 @@ public class OrderList {
     private ArrayList<Order> listOfOrders;
 
     public OrderList(){
+        listOfOrders = new ArrayList<>();
+    }
 
+    public ArrayList<Order> getListOfOrders(){
+        return listOfOrders;
     }
 
     public void createNewOrder(int orderNumber){
