@@ -13,6 +13,10 @@ public class PizzaBase {
         ui = new UserInterface(this);
     }
 
+    public static void main(String[] args) {
+        PizzaBase pizzaBase = new PizzaBase();
+        pizzaBase.start();
+    }
 
     public void addPizza(Pizza pizza){
         db.addPizza(pizza);
@@ -24,11 +28,6 @@ public class PizzaBase {
 
     public void exit() throws FileNotFoundException {
         db.saveToFile();
-    }
-
-    public static void main(String[] args) {
-        PizzaBase pizzaBase = new PizzaBase();
-        pizzaBase.start();
     }
 
     public List<Pizza> getListOfAllPizzas(){

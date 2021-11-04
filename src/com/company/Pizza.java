@@ -6,12 +6,10 @@ public class Pizza {
     private String price;
     private int count;
 
-
     public Pizza(String name, String ingredients, String price){
         this.pizzaName = name;
         this.ingredients = ingredients;
         this.price = price;
-
     }
 
     public Pizza (String CSVLine){
