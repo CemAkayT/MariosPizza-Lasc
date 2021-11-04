@@ -15,6 +15,7 @@ public class Database {
         public Database() {
             listen = new ArrayList<>();
             loadFromFile();
+
         }
 
         public void addPizza(Pizza pizza) {
@@ -23,7 +24,7 @@ public class Database {
 
         public void saveToFile() throws FileNotFoundException {
             // Lav en ny fil
-            File fil = new File("Menu.CSV");
+            File fil = new File("data/Menu.CSV");
             PrintStream ps = null;
             ps = new PrintStream(fil);
 
@@ -38,15 +39,30 @@ public class Database {
             // Åbn en fil
             // Læs hver linje i filen
             try {
-                File fil = new File("Menu.CSV");
+                File fil = new File("data/Menu.CSV");
                 Scanner reader = new Scanner(fil);
+                reader.useDelimiter(",");
+
 
                 while(reader.hasNext()) {
+
+
+
                     String line = reader.nextLine();
                     // Opret et Pizza objekt for hver linje
-                    Pizza pizza = new Pizza(line);
+                    String[] newPizza = line.split(";");
+
+
+                    Pizza pizza = new Pizza(newPizza[0], newPizza[1], newPizza[2]);
+                    System.out.println(pizza);
                     listen.add(pizza);
+
+
+
+
                 }
+
+
             } catch (FileNotFoundException e) {
                 // No file found - just ignore, and start with empty database!
                 listen.clear();

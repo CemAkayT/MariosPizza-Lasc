@@ -3,11 +3,11 @@ package com.company;
 public class Pizza {
     private String pizzaName;
     private String ingredients;
-    private int price;
+    private String price;
     private int count;
 
 
-    public Pizza(String name, String ingredients,int price){
+    public Pizza(String name, String ingredients, String price){
         this.pizzaName = name;
         this.ingredients = ingredients;
         this.price = price;
@@ -26,7 +26,7 @@ public class Pizza {
         return ingredients;
     }
 
-    public int getPrice(){
+    public String getPrice(){
         return price;
     }
 
