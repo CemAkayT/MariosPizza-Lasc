@@ -24,8 +24,11 @@ public class UserInterface {
         while (running) {
             System.out.println("""
                     1) Create order
-                    2) See Menu
-                   
+                    2) Edit order
+                    3) Finish order
+                    4) See Menu
+                    5) See active orders
+                                        
                     0) Exit""");
             int selection = input.nextInt();
             input.nextLine();
@@ -187,6 +190,11 @@ public class UserInterface {
         orderNumber++;
     }
 
+    private void editOrder(Scanner scanner) {
+    }
+
+    private void finishOrder(Scanner scanner) {
+    }
 
     public void seeMenu() {
         //hent menuen
@@ -196,6 +204,16 @@ public class UserInterface {
         for (Pizza pizza : pizzas) {
             System.out.println(pizza);
         }
+    }
+
+
+    private void seeActiveOrders() {
+        //hent listen af alle order
+        List<Order> orders = application.getListOfOrders();
+
+        //TODO:
+        //for hver order
+        // prænt alle pizzaer i ordren ud
     }
 }
 
