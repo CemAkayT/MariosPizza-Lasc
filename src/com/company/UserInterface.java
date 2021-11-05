@@ -198,6 +198,7 @@ public class UserInterface {
 
         if (orders.size() == 0) {
             System.out.println("There are no active orders");
+            System.out.println();
         } else {
 
         System.out.println("this is the current order:");
