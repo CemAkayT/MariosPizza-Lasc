@@ -18,4 +18,15 @@ public class OrderList {
         Order order = new Order(orderNumber);
         listOfOrders.add(order);
     }
+
+    public void finishOrder(){
+        if (listOfOrders.size() == 0){
+
+        }
+        else {
+            listOfOrders.remove(0);
+        }
+    }
+
+
 }

@@ -70,6 +70,10 @@ public class Database {
             orderList.createNewOrder(orderNumber);
         }
 
+        public void finishOrder(){
+            orderList.finishOrder();
+        }
+
     public ArrayList<Order> getListOfOrders() {
         return orderList.getListOfOrders();
     }

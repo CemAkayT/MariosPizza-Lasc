@@ -39,6 +39,11 @@ public class PizzaBase {
         db.createNewOrder(orderNumber);
     }
 
+    public void finishOrder(){
+
+        db.finishOrder();
+    }
+
     public ArrayList<Order> getListOfOrders() {
         return db.getListOfOrders();
     }

@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class UserInterface {
     private PizzaBase application;
-    private int orderNumber = 0;
+    private int orderNumber = 1;
 
     public UserInterface(PizzaBase application) {
         this.application = application;
@@ -194,6 +194,32 @@ public class UserInterface {
     }
 
     private void finishOrder(Scanner scanner) {
+        List<Order> orders = application.getListOfOrders();
+
+        if (orders.size() == 0) {
+            System.out.println("There are no active orders");
+        } else {
+
+        System.out.println("this is the current order:");
+        Order order = orders.get(0);
+
+        for (Pizza pizza: order.getPizzas()){
+            System.out.println(pizza);
+        }
+
+        System.out.println("Do you wanna finish this order?");
+        System.out.println("0) no");
+        System.out.println("1) yes");
+        int selection = scanner.nextInt();
+
+        switch (selection){
+            case 0:
+                break;
+            case 1:
+                application.finishOrder();
+                break;
+            }
+        }
     }
 
     public void seeMenu() {
@@ -212,6 +238,13 @@ public class UserInterface {
         List<Order> orders = application.getListOfOrders();
 
         //TODO:
+        for (Order order : orders) {
+            System.out.println("Order number: " + order.getOrderNumber());
+            for (Pizza pizza: order.getPizzas()) {
+                System.out.println(pizza);
+            };
+            System.out.println();
+        }
         //for hver order
         // prænt alle pizzaer i ordren ud
     }

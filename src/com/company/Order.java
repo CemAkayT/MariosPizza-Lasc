@@ -20,4 +20,8 @@ public class Order {
     public void addPizzaToOrder(Pizza pizza){
         orders.add(pizza);
     }
+
+    public ArrayList<Pizza> getPizzas(){
+        return orders;
+    }
 }
