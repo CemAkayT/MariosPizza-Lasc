@@ -19,14 +19,14 @@ public class OrderList {
         listOfOrders.add(order);
     }
 
-    public void finishOrder(){
+    /*public void finishOrder(){
         if (listOfOrders.size() == 0){
 
         }
         else {
             listOfOrders.remove(0);
         }
-    }
+    }*/
 
 
 }

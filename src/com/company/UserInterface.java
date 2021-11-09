@@ -1,7 +1,10 @@
 package com.company;
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
@@ -14,7 +17,7 @@ public class UserInterface {
         this.application = application;
     }
 
-    public void start() {
+    public void start() throws FileNotFoundException {
         System.out.println("Welcome to Marios Pizza");
 
 
@@ -193,7 +196,7 @@ public class UserInterface {
     private void editOrder(Scanner scanner) {
     }
 
-    private void finishOrder(Scanner scanner) {
+    private void finishOrder(Scanner scanner) throws FileNotFoundException {
         List<Order> orders = application.getListOfOrders();
 
         if (orders.size() == 0) {
@@ -217,7 +220,14 @@ public class UserInterface {
             case 0:
                 break;
             case 1:
-                application.finishOrder();
+                File file = new File("data/orderHistory");
+                PrintStream ps = new PrintStream(new FileOutputStream(file, true));
+
+                ps.println(order.getOrderNumber());
+                for (Pizza pizza: order.getPizzas()){
+                    ps.println(pizza);
+                }
+
                 break;
             }
         }

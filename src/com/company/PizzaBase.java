@@ -14,7 +14,7 @@ public class PizzaBase {
         ui = new UserInterface(this);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         PizzaBase pizzaBase = new PizzaBase();
         pizzaBase.start();
     }
@@ -23,7 +23,7 @@ public class PizzaBase {
         db.addPizza(pizza);
     }
 
-    public void start(){
+    public void start() throws FileNotFoundException {
         ui.start();
     }
 
@@ -39,7 +39,7 @@ public class PizzaBase {
         db.createNewOrder(orderNumber);
     }
 
-    public void finishOrder(){
+    public void finishOrder() throws FileNotFoundException {
 
         db.finishOrder();
     }

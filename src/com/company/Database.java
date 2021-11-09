@@ -1,9 +1,6 @@
 package com.company;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -61,7 +58,6 @@ public class Database {
                 listen.clear();
             }
         }
-
         public List<Pizza> getListOfAllPizzas() {
             return listen;
         }
@@ -70,8 +66,8 @@ public class Database {
             orderList.createNewOrder(orderNumber);
         }
 
-        public void finishOrder(){
-            orderList.finishOrder();
+        public void finishOrder() throws FileNotFoundException {
+            //orderList.finishOrder();
         }
 
     public ArrayList<Order> getListOfOrders() {
