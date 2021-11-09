@@ -13,6 +13,7 @@ public class UserInterface {
     private PizzaBase application;
     private int orderNumber = 1;
 
+
     public UserInterface(PizzaBase application) {
         this.application = application;
     }
@@ -220,14 +221,7 @@ public class UserInterface {
             case 0:
                 break;
             case 1:
-                File file = new File("data/orderHistory");
-                PrintStream ps = new PrintStream(new FileOutputStream(file, true));
-
-                ps.println(order.getOrderNumber());
-                for (Pizza pizza: order.getPizzas()){
-                    ps.println(pizza);
-                }
-
+                application.finishOrder();
                 break;
             }
         }

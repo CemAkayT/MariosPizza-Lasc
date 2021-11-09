@@ -68,6 +68,19 @@ public class Database {
 
         public void finishOrder() throws FileNotFoundException {
             //orderList.finishOrder();
+
+            File file = new File("data/orderHistory");
+            PrintStream ps = new PrintStream(new FileOutputStream(file, true));
+
+            List<Order> listOfOrders = getListOfOrders();
+            Order order = listOfOrders.get(0);
+
+            ps.println(order.getOrderNumber());
+            for (Pizza pizza: order.getPizzas()){
+                ps.println(pizza);
+            }
+
+            listOfOrders.remove(0);
         }
 
     public ArrayList<Order> getListOfOrders() {
