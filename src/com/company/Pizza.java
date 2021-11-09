@@ -30,7 +30,7 @@ public class Pizza {
 
     @Override
     public String toString() {
-        return"\033[0;91m" + pizzaName + "\u001B[0m" + "," + "\u001B[33m" + ingredients + "," + "\u001B[34m" + price + " DKK";
+        return pizzaName + ingredients + price + "DKK";
     }
 
     public String toCSVString(){
